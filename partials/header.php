@@ -2,27 +2,33 @@
   <div class="container-fluid">
     <a class="profile navbar-brand btn btn-success" id="edit_profile" data-bs-toggle="modal" data-bs-target="#exampleModal"><?php echo $_SESSION['name'] . " " . $_SESSION['lastname'] ?></a>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="form-group">
-                <input type="text" value="<?php echo $_SESSION['name'] ?>" class="form-control">
+          <div class="modal-body" userId="<?php echo $_SESSION['id'] ?>">
+            <form action="" id="form-modal" >
+              <div class="form-group" >
+                <input type="hidden" value="<?php echo $_SESSION['id'] ?>" class="form-control" id="id">
               </div>
               <div class="form-group">
-                <input type="text" value="<?php echo $_SESSION['lastname'] ?>" class="form-control">
+                <input type="text" value="<?php echo $_SESSION['name'] ?>" class="form-control" id="name">
               </div>
+              <div class="form-group">
+                <input type="text" value="<?php echo $_SESSION['lastname'] ?>" class="form-control" id="lastname">
+              </div>
+
+              <div class="modal-footer" id="btn-form">
+                <button type="submit" class="btn btn-primary" id="btnEditProfile">Guardar Cambios</button>
+              </div>
+
+
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+
         </div>
       </div>
     </div>

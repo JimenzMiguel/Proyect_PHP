@@ -1,8 +1,6 @@
-
-
 /* La palabra clave class crea una nueva clase y el método constructor se llama automáticamente
   cuando se crea una nueva instancia de la clase. */
-class User {
+export class User {
   constructor(name, lastname, email, password) {
     this.name = name;
     this.lastname = lastname;
@@ -93,4 +91,3 @@ $("#sign-up").click(function (e) {
   });
   e.preventDefault();
 });
-

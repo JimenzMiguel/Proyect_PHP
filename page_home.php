@@ -18,7 +18,7 @@ if (empty($_SESSION['id'])) {
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="./style/style_page_home.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@ if (empty($_SESSION['id'])) {
     <div class="container">
       <div class="row">
         <div id="form_edit">
-          <?php echo  $_SESSION["email"] = $data->email_user?>
+          <h1>Hola mundo</h1>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@ if (empty($_SESSION['id'])) {
   <!-- jQuery librarie -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-  <script src="./js/edit_profile.js"></script>
+  <script src="./js/edit_profile.js" type="module"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

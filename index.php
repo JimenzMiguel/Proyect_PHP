@@ -5,6 +5,21 @@ if (isset($_SESSION['id'])) {
   header('location: page_home.php');
 }
 
+if (!empty($_POST['email']) && !empty($_POST['password'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $sql = $conn->query("SELECT * FROM users WHERE email_user = '$email' and password_user = '$password'");
+  if ($data = $sql->fetch_object()) {
+    $_SESSION["id"] = $data->id_user;
+    $_SESSION["name"] = $data->name_user;
+    $_SESSION["lastname"] = $data->lastname_user;
+
+    header('location: page_home.php');
+  }
+} else {
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +43,7 @@ if (isset($_SESSION['id'])) {
       <div id="alert"></div>
       <div class="card" id="card-form">
         <div class="card-body">
-          <form id="form" method="POST" action="./back_end/login.php">
+          <form id="form" method="POST" action="index.php">
             <h1 id="title">Welcome</h1>
             <div class="form-group">
               <input type="hidden" class="form-control" id="id_user" name="id">
@@ -38,7 +53,7 @@ if (isset($_SESSION['id'])) {
             </div>
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password" id="password_user" name="password">
-              <button class="btn btn-success" id="btn-login" type="submit">Login</button>
+              <button class="btn btn-success" id="btn-login" type="submit" name="btn-login">Login</button>
               <div id="links">
                 <a href="">¿Perdiste tu contraseña?</a>
                 <a href="#" id="sign-up">¿No tiene cuenta? Registrate</a>
