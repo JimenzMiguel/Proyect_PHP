@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $("#table-list").hide();
   $("#task").click(function (e) {
     $("#container-info").html(
       `
@@ -17,6 +18,7 @@ $(document).ready(function () {
         `
     );
 
+    /* Esta es una función que se ejecuta cuando se envía el formulario. */
     $("#card-form-task").submit(function (e) {
       const url = "controller_task/create_task.php";
       let DataForm = {
@@ -28,9 +30,7 @@ $(document).ready(function () {
       } else {
         $.post(url, DataForm, function (response) {
           alert(response);
-          
         });
-        
       }
       $("#form-task").trigger("reset");
       e.preventDefault();
@@ -39,38 +39,31 @@ $(document).ready(function () {
   });
 
   $("#list-task").click(function (e) {
-    $("#container-info").html(`
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+    const listaTask = () => {
+      $.ajax({
+        type: "GET",
+        url: "controller_task/list_task.php",
+        success: function (response) {
+          let dataResponse = JSON.parse(response);
+          let trList = "";
+          let tasks = dataResponse.forEach((element) => {
+            trList += `
+                <tbody>
+                  <tr>
+                    <td>${element.name_task}</td>
+                    <td>${element.description_task}</td>
+                  </tr>
+                </tbody>
+          
+                `;
+          });
 
-    `);
+          $("#container-info").html(trList);
+        },
+      });
+    };
+    listaTask();
+
     e.preventDefault();
   });
 });

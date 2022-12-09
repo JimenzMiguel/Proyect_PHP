@@ -46,7 +46,8 @@ if (empty($_SESSION['id'])) {
               </ul>
             </div>
             <div class="col-sm-7" id="container-info">
-              <?php include('./partials/carrousel_page_home.php')?>
+              <?php include('./partials/carrousel_page_home.php') ?>
+              <?php include('./partials/table.php') ?>
             </div>
           </div>
         </div>
