@@ -24,13 +24,28 @@ if (empty($_SESSION['id'])) {
 <body>
   <header id="navbar">
     <?php include('./partials/header.php') ?>
-
   </header>
   <main>
     <div class="container">
       <div class="row">
-        <div id="form_edit">
-          <h1>Hola mundo</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-9">
+              <h1 id="title-home">Welcome To Page Home</h1>
+            </div>
+            <div class="col-md-4" id="menu-list">
+              <ul class="list-group">
+                <li class="list-group-item active" aria-current="true" id="title-menu"><a href="page_home.php" id="menu-nom">Menu Principal</a></li>
+                <li class="list-group-item btn btn-warning"><a href="#" class="link-menu" id="task">Registrar Tarea</a></li>
+                <li class="list-group-item btn btn-warning"><a href="#" class="link-menu" id="list-task">Lista de tareas</a></li>
+                <li class="list-group-item btn btn-warning"><a href="#" class="link-menu" id="">A second item</a></li>
+                <li class="list-group-item btn btn-warning"><a href="#" class="link-menu" id="">A second item</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-7" id="container-info">
+              <?php include('./partials/carrousel_page_home.php')?>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -43,6 +58,7 @@ if (empty($_SESSION['id'])) {
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
   <script src="./js/edit_profile.js" type="module"></script>
+  <script src="./js/page_home.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

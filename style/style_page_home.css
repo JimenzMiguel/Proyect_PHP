@@ -1,3 +1,8 @@
+#title-home{
+  margin-top: 1em;
+  color: #27AE60 ;
+}
+
 .form-group{
   margin-bottom: 20px;
 }
@@ -11,4 +16,39 @@
 #btn-form{
   display: flex;
   justify-content: space-around;
+}
+
+#menu-list{
+  /* border: 1px solid red !important; */
+  margin-top: 2em;
+}
+
+#menu-nom{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.link-menu{
+  text-decoration: none;
+}
+
+#container-info{
+  /* border: 1px solid red !important; */
+  margin-top: 2em;
+}
+
+#title-menu{
+  background: #2980b9 !important;
+}
+
+#btnTask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.link-menu{
+  display: flex;
+  justify-content: center;
 }

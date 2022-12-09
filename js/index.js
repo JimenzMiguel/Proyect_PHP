@@ -1,6 +1,6 @@
 /* La palabra clave class crea una nueva clase y el método constructor se llama automáticamente
   cuando se crea una nueva instancia de la clase. */
-export class User {
+class User {
   constructor(name, lastname, email, password) {
     this.name = name;
     this.lastname = lastname;
@@ -65,6 +65,9 @@ $("#sign-up").click(function (e) {
     let UrlCreateUser = "back_end/create_user.php";
     let user = new User(name, lastname, email2, password2);
 
+   /* Esta es una declaración condicional que verifica si las variables nombre, apellido, correo
+   electrónico2 y contraseña2 están vacías. Si están vacíos, mostrará un mensaje de alerta. Si no
+   están vacíos, enviará los datos al archivo back_end/create_user.php. */
     if (name === "" && lastname === "" && email2 === "" && password2 === "") {
       $("#alert").html(`
         <div class="alert alert-danger alert-dismissible fade show" role="alert" >
