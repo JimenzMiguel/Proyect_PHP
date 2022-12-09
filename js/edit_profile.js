@@ -7,7 +7,7 @@ $(document).ready(function () {
     let lastname = $("#lastname").val();
     let element = $(this)[0].parentElement;
     let id = $(element).attr("userId");
-    $.post(url, { id, name, lastname }, function (response) {
+    $.post(url, { id }, function (response) {
       alert(response);
     });
     e.preventDefault();
