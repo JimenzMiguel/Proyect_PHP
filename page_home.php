@@ -8,13 +8,15 @@ if (empty($_SESSION['id'])) {
 
 
 
+
+
 ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Home page</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,12 +31,12 @@ if (empty($_SESSION['id'])) {
     <?php include('./partials/header.php') ?>
   </header>
   <main>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="container">
           <div class="row">
             <div class="col-9">
-              <h1 id="title-home">Welcome To Page Home</h1>
+              <!-- <h1 id="title-home">Welcome To Page Home</h1> -->
             </div>
             <div class="col-md-4" id="menu-list">
               <ul class="list-group">
@@ -47,7 +49,6 @@ if (empty($_SESSION['id'])) {
             </div>
             <div class="col-sm-7" id="container-info">
               <?php include('./partials/carrousel_page_home.php') ?>
-              <?php include('./partials/table.php') ?>
             </div>
           </div>
         </div>
