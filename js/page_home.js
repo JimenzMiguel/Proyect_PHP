@@ -57,7 +57,7 @@ $(document).ready(function () {
      * Hace una solicitud AJAX al servidor, que devuelve un objeto JSON, que luego se analiza y se
      * muestra en el HTML
      */
-   
+
     const listaTask = () => {
       $.ajax({
         type: "GET",
@@ -89,20 +89,18 @@ $(document).ready(function () {
      * La función deleteTask() es una función que se llama cuando el usuario hace clic en el botón
      * eliminar
      */
-    function deleteTask() {
-      $(document).on("click", ".delete-task", function () {
-        if (confirm) {
-          let url = "controller_task/delete_task.php";
-          let element = $(this)[0].parentElement.parentElement;
-          let id = $(element).attr("id_task");
-          $.post(url, { id }, function (response) {
-            window.location.reload("list_task.php");
-            alert(response);
-          });
-        }
-      });
-    }
-    deleteTask();
+
+    $(document).on("click", ".delete-task", function () {
+      if (confirm("Quieres eliminar esta tarea?")) {
+        let url = "controller_task/delete_task.php";
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr("id_task");
+        $.post(url, { id }, function (response) {
+          window.location.reload("list_task.php");
+          alert(response);
+        });
+      }
+    });
 
     e.preventDefault();
   });
